@@ -1,0 +1,14 @@
+### Code review point
+- It is a good practice to keep the (related) classes in a namespace. Keep this class too in some namespace.
+- Please give some meaningful name of the class so that anyone who wants use the class's method could find it easily
+- It is good practice to name the variables depending on zhe contents of the variable (I am referring to "String f")
+- Also the length of the name of the variable should depend on the scope's length of the variable. While it is "okay" to name a variable i,j,f, in loop-structures, all the other variables should represent what they contain.
+- Always validate the variables' content before using them. What if "str" AND/OR "f" contain(s) null-values
+- Use the appropriate namespace so that Dictionary class could be used. Here use "using System.Collections.Generic;"
+- Make that isNotAllowed a boolean value and use an appropriate api method of Dictionary to get the boolean value. Here "!allowedDict.ContainsKey(str);" could be used to get the value. Also please refer to the documentation before using any class.
+- Every "TryParse" here throws an exception (FormatException to be exact). Handle that exception and throw it as an appropriate exception with a helpful message.
+- That still doesn't address another problem of all the branches returning a value. I don't see that "if (isNotAllowed" has to stay separated from the rest of the if-else ladder. Make that "if (isNotAllowed" part of that if-else ladder.
+- Prefer to use the "Equals" method when comparing. Please read the differences between Equals and ==.
+- The last statement `throw new Exception("Unknown format.");` will never be executed. Delete it please.
+- Also it is not only customary but mandatory for the code to be merged with the test cases. Please add some test cases so that reviewers quickly could verify that the code is working as expected.
+- please ALWAYS ensure that the code is in a compilable state before pushing to the version control and merging. Else the CI/CD pipelines will faile thereby blocking others - this is especially true of merging into a stable branch.
