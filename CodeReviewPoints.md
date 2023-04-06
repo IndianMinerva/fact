@@ -1,4 +1,4 @@
-### Code review point
+### Code review points: 
 - It is a good practice to keep the (related) classes in a namespace. Keep this class too in some namespace.
 - Please give some meaningful name of the class so that anyone who wants use the class's method could find it easily
 - It is good practice to name the variables depending on zhe contents of the variable (I am referring to "String f")
