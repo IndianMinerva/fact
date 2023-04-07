@@ -26,7 +26,13 @@ public class MDHeaderParser {
             if (MD_HEADER_REGEX.matcher(mdHeader.trim()).matches()) {
                 return leadingSpaces + "<h" + hashCharacterCount + ">" + getText(header) + "</h" + hashCharacterCount + ">" + trailingSpaces;
             } else {
-                return "";
+                if (hashCharacterCount > 6)
+                    return leadingSpaces + getText(header) + trailingSpaces;
+                else if(hashCharacterCount == 0)
+                    return header;
+                else if (header.trim().replace("#", "").startsWith("  "))
+                    return header;
+                else return "";
             }
         }).orElse("");
     }
