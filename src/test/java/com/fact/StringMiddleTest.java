@@ -1,4 +1,4 @@
-package org.example;
+package com.fact;
 
 import org.junit.Test;
 

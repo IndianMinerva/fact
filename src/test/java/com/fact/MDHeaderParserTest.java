@@ -1,4 +1,4 @@
-package org.example;
+package com.fact;
 
 import junit.framework.JUnit4TestAdapter;
 import junitparams.JUnitParamsRunner;
